@@ -11,6 +11,10 @@
   border-radius: 10px;
   margin: .25rem;
   cursor: pointer;
+  background: var(--button-color-background);
+  color: var(--main-color-text);
+  border: none;
+  border-radius: 10px;
 }
 .ButtonInner {
   display: flex;
