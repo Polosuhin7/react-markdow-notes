@@ -1,0 +1,14 @@
+.Item {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background .5s;
+}
+
+.Item:hover {
+  background: var(--color-item-hover);
+}
+
+.ItemActive {
+  background: var(--color-item-hover);
+}

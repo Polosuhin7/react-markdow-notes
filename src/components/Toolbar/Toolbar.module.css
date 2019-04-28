@@ -1,0 +1,19 @@
+.Toolbar {
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--color-border)
+}
+
+.Button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  margin: .25rem;
+  cursor: pointer;
+}
+.ButtonInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

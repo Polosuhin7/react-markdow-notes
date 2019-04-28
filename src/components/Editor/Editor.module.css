@@ -1,0 +1,13 @@
+.Editor  {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  overflow: scroll;
+  outline: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+}
+.Editor:focus {
+  outline: 0;
+}

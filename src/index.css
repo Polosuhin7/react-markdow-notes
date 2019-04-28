@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&subset=cyrillic');
+
+body, html, #root{
+  width: 100%;
+  height: 100%;
+  background: var(--main-background-color);
+  color: var(--main-color-text);
+  line-height: 1.2;
+  font-family: 'Roboto Mono', monospace;
+  overflow: hidden;
+}

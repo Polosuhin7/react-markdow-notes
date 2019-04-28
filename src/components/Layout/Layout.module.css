@@ -1,0 +1,23 @@
+.Layout {
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.Toolbar {
+  flex: 0 0 100%;
+}
+
+.List {
+  overflow: scroll;
+  height: 100%;
+  flex: 0 0 300px;
+  border-right: 1px solid #ccc;
+}
+
+.Content {
+  overflow: scroll;
+  max-height: 90%;
+  padding: 1rem;
+  flex: 1 1 70%;
+} 
