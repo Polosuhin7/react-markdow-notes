@@ -38,6 +38,9 @@ class Editor extends Component {
       changeAt
     });
   }
+  cancelEdit = e => {
+    e.which == 27 && (this.handleBlur())
+  }
   
   render() {
     return (
@@ -45,10 +48,10 @@ class Editor extends Component {
         <textarea
           className={classes.Editor}
           autoFocus
-          placeholder={ this.props.currentRecord.content }
           value={ this.state.content }
           onChange={ this.handleChange }
           onBlur={ this.handleBlur }
+          onKeyUp={ this.cancelEdit }
         />
       </Fragment>
     )

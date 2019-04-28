@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 
 import classes from './Toolbar.module.css';
+import Search from '../Search/Search';
 
 const canEditButtonGroup = props => (
   <Fragment>
@@ -25,7 +26,7 @@ const Toolbar = (props) => (
       </div>
     </button>
     { props.currentRecord ? canEditButtonGroup(props) : null }
-    
+    <Search { ...props } />
   </div>
 )
 

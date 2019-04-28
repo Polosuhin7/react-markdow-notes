@@ -8,12 +8,14 @@ import { EDIT_COMPILE_ITEM } from '../actions/editCompileItem';
 import { CHANGE_CURRENT_RECORD } from '../actions/changeCurrentRecord';
 import { SAVE_TO_LOCAL_STORAGE } from '../actions/saveToLocalStorage';
 import { DELETE_ITEM } from '../actions/deleteItem';
+import { SEARCH_ITEM } from '../actions/searchItem';
 
 const APP_NAME = "DIARY";
 
 const INITIAL_STATE = {
   records: [],
-  editItem: true
+  editItem: true,
+  searchItem: ''
 }
 
 export function diaryReducer( state = INITIAL_STATE, action) {
@@ -90,7 +92,12 @@ export function diaryReducer( state = INITIAL_STATE, action) {
         records: [..._records],
         currentRecord: _records[deletedIndex - 1]
       }
-
+    }
+    case SEARCH_ITEM: {
+      return {
+        ...state,
+        searchItem: action.value
+      }
     }
     default: {
       return state

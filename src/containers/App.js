@@ -10,15 +10,11 @@ import { editCompileItem } from '../actions/editCompileItem';
 import { changeCurrentRecord } from '../actions/changeCurrentRecord';
 import { saveToLocalStorage } from '../actions/saveToLocalStorage';
 import { deleteItem } from '../actions/deleteItem';
+import { searchItem } from '../actions/searchItem';
 
 class App extends Component {
   componentDidMount() {
     this.props.handleLoadStateFromLocalStorage();
-    window.addEventListener('keyup', (e) => {
-      if(e.which === 27) {
-        this.props.handleEditCompileItem()
-      }
-    })
   }
   componentDidUpdate() {
     this.props.handleSaveToLocalStorage();
@@ -29,6 +25,7 @@ class App extends Component {
   handleEditCompileItem = record => this.props.handleEditCompileItem(record);
   handleChangeCurrentRecord = record => this.props.handleChangeCurrentRecord(record);
   handleDeleteItem = id =>  id && (this.props.handleDeleteItem(id));
+  handleSearchItemChange = value => this.props.handleSearchItemChange(value);
   
 
 
@@ -40,6 +37,7 @@ const mapStateToProps = state => ({
   editingRecords: state.diary.editingRecords,
   currentRecord: state.diary.currentRecord,
   editItem: state.diary.editItem,
+  searchItem: state.diary.searchItem
 })
 
 const mapDispatchToProps = {
@@ -49,7 +47,8 @@ const mapDispatchToProps = {
   handleEditCompileItem: editCompileItem,
   handleChangeCurrentRecord: changeCurrentRecord,
   handleSaveToLocalStorage: saveToLocalStorage,
-  handleDeleteItem: deleteItem
+  handleDeleteItem: deleteItem,
+  handleSearchItemChange: searchItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
