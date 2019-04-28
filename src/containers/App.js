@@ -14,11 +14,6 @@ import { deleteItem } from '../actions/deleteItem';
 class App extends Component {
   componentDidMount() {
     this.props.handleLoadStateFromLocalStorage();
-    window.addEventListener('keyup', (e) => {
-      if(e.which === 27) {
-        this.props.handleEditCompileItem()
-      }
-    })
   }
   componentDidUpdate() {
     this.props.handleSaveToLocalStorage();
